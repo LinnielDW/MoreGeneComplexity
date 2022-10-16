@@ -1,6 +1,6 @@
 <ModMetaData>
     <name>More Gene Complexity</name>
-    <author>Arquebus</author>
+    <author>Arquebus, woffleman</author>
     <packageId>Arquebus.MoreGeneComplexity</packageId>
     <supportedVersions>
         <li>1.4</li>
