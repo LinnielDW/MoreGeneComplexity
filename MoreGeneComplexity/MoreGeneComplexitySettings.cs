@@ -12,8 +12,8 @@ public class MoreGeneComplexitySettings: ModSettings
     private static string MaxGeneComplexityMultiplierBuffer = MaxGeneComplexityMultiplier.ToString();
     public override void ExposeData()
     {
-        Scribe_Values.Look(ref MaxGeneComplexityOffset, "MaxGeneComplexityOffset", 0);
-        Scribe_Values.Look(ref MaxGeneComplexityMultiplier, "MaxGeneComplexityMultiplier", 10);
+        Scribe_Values.Look(ref MaxGeneComplexityOffset, "MaxGeneComplexityOffset", 5);
+        Scribe_Values.Look(ref MaxGeneComplexityMultiplier, "MaxGeneComplexityMultiplier", 1);
         base.ExposeData();
     }
 
