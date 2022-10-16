@@ -22,4 +22,9 @@ public class MoreGeneComplexity : Mod
         settings.DoSettingsWindowContents(inRect);
         base.DoSettingsWindowContents(inRect);
     }
+
+    public override string SettingsCategory()
+    {
+        return "MGC_SettingsTitle".Translate();
+    }
 }
