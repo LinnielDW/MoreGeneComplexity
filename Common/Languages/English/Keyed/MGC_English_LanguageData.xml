@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+    <MGC_MaxGeneComplexityOffset>Max Gene Complexity Offset</MGC_MaxGeneComplexityOffset>
+    <MGC_MaxGeneComplexityOffsetTooltip>A flat bonus to maximum gene complexity.</MGC_MaxGeneComplexityOffsetTooltip>
+    
+    <MGC_MaxGeneComplexityMultiplier>Max Gene Complexity Multiplier</MGC_MaxGeneComplexityMultiplier>
+    <MGC_MaxGeneComplexityMultiplierTooltip>A multiplier to the maximum gene complexity.</MGC_MaxGeneComplexityMultiplierTooltip>
+</LanguageData>
