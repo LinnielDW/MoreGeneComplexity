@@ -14,6 +14,7 @@ public class MoreGeneComplexitySettings: ModSettings
     {
         Scribe_Values.Look(ref MaxGeneComplexityOffset, "MaxGeneComplexityOffset", 0);
         Scribe_Values.Look(ref MaxGeneComplexityMultiplier, "MaxGeneComplexityMultiplier", 10);
+        base.ExposeData();
     }
 
     public void DoSettingsWindowContents(Rect inRect)
@@ -23,5 +24,7 @@ public class MoreGeneComplexitySettings: ModSettings
         
         listingStandard.DrawLabelledNumericSetting(ref MaxGeneComplexityOffset, ref MaxGeneComplexityOffsetBuffer, "MGC_MaxGeneComplexityOffset", 0, 1000);
         listingStandard.DrawLabelledNumericSetting(ref MaxGeneComplexityMultiplier, ref MaxGeneComplexityMultiplierBuffer, "MGC_MaxGeneComplexityMultiplier", 1, 1000);
+
+        listingStandard.End();
     }
 }
