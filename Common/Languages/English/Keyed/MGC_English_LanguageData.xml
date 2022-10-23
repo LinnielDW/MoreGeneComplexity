@@ -6,4 +6,7 @@
     
     <MGC_MaxGeneComplexityMultiplier>Max Gene Complexity Multiplier</MGC_MaxGeneComplexityMultiplier>
     <MGC_MaxGeneComplexityMultiplierTooltip>A multiplier to the maximum gene complexity.</MGC_MaxGeneComplexityMultiplierTooltip>
+    
+    <MGC_GeneTuningMin>Minimum Metabolic Efficiency</MGC_GeneTuningMin>
+    <MGC_GeneTuningMinTooltip>The floor of how much metabolic efficiency a pawn can have. Metabolic efficiency does not have any further effect past -5.</MGC_GeneTuningMinTooltip>
 </LanguageData>

@@ -5,16 +5,23 @@ using Verse;
 
 namespace MoreGeneComplexity;
 
+[StaticConstructorOnStartup]
+public class MoreGeneComplexityPatches
+{
+    static MoreGeneComplexityPatches()
+    {
+        var harmony = new Harmony("com.arquebus.rimworld.mod.moregenecomplexity");
+        harmony.PatchAll(Assembly.GetExecutingAssembly());
+    }
+}
+
 public class MoreGeneComplexity : Mod
 {
     readonly MoreGeneComplexitySettings settings;
-    
+
     public MoreGeneComplexity(ModContentPack content) : base(content)
     {
         settings = GetSettings<MoreGeneComplexitySettings>();
-
-        var harmony = new Harmony("com.arquebus.rimworld.mod.moregenecomplexity");
-        harmony.PatchAll(Assembly.GetExecutingAssembly());
     }
 
     public override void DoSettingsWindowContents(Rect inRect)
