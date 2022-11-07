@@ -29,6 +29,7 @@ public class Patches
             yield return AccessTools.Method(typeof(BiostatsTable), "Draw");
             yield return AccessTools.Method(typeof(GeneCreationDialogBase), "WithinAcceptableBiostatLimits");
             yield return AccessTools.Method(typeof(Dialog_CreateXenotype), "GetWarnings");
+            yield return AccessTools.Method(typeof(Dialog_SelectXenogerm), "Accept");
             yield return AccessTools.Method(typeof(Xenogerm), "GetGizmos");
             yield return AccessTools.Method(typeof(Xenogerm), "<GetGizmos>b__15_0");
             yield return AccessTools.Method(typeof(Xenogerm), "GetFloatMenuOptions");
