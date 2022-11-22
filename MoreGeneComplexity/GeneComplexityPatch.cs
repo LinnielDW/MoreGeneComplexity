@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Reflection;
-using System.Reflection.Emit;
 using HarmonyLib;
 using RimWorld;
 using Verse;
@@ -22,42 +21,16 @@ public class Patches
 
     [StaticConstructorOnStartup]
     [HarmonyPatch]
-    public static class BioStat_Transpiler
+    public static class GeneTuningBioStatMinPatch
     {
         static IEnumerable<MethodBase> TargetMethods()
         {
-            yield return AccessTools.Method(typeof(BiostatsTable), "Draw");
-            yield return AccessTools.Method(typeof(GeneCreationDialogBase), "WithinAcceptableBiostatLimits");
-            yield return AccessTools.Method(typeof(Dialog_CreateXenotype), "GetWarnings");
-            yield return AccessTools.Method(typeof(Dialog_SelectXenogerm), "Accept");
-            yield return AccessTools.Method(typeof(Xenogerm), "GetGizmos");
-            yield return AccessTools.Method(typeof(Xenogerm), "<GetGizmos>b__16_0");
-            yield return AccessTools.Method(typeof(Xenogerm), "GetFloatMenuOptions");
-            yield return AccessTools.Inner(typeof(Xenogerm), "<GetFloatMenuOptions>d__14")
-                .GetMethod("MoveNext", BindingFlags.NonPublic | BindingFlags.Instance);
+            yield return AccessTools.Constructor(typeof(GeneTuning));
         }
 
-        static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
+        static void Postfix()
         {
-            // foreach(MethodBase method in TargetMethods())
-            // {
-            //     Log.Warning(method.Name);
-            // }
-
-            var codes = new List<CodeInstruction>(instructions);
-            var x = AccessTools.Method(typeof(IntRange), "get_TrueMin");
-
-            foreach (var code in codes)
-            {
-                if (code.opcode == OpCodes.Call && code.operand == x)
-                {
-                    // Log.Warning("CodeInstruction: " + " opCode: " + code.opcode + " operand: " + code.operand);
-                    code.operand = AccessTools.Method(typeof(MoreGeneComplexitySettings), "newBioStat_Min");
-                    // Log.Warning("CodeInstruction: " + " opCode: " + code.opcode + " operand: " + code.operand);
-                }
-
-                yield return code;
-            }
+            AccessTools.StaticFieldRefAccess<IntRange>(typeof(GeneTuning), "BiostatRange") = new IntRange(GeneTuningMin, 5);
         }
     }
 }
