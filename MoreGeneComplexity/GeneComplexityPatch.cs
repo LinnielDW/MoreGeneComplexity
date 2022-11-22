@@ -31,7 +31,7 @@ public class Patches
             yield return AccessTools.Method(typeof(Dialog_CreateXenotype), "GetWarnings");
             yield return AccessTools.Method(typeof(Dialog_SelectXenogerm), "Accept");
             yield return AccessTools.Method(typeof(Xenogerm), "GetGizmos");
-            yield return AccessTools.Method(typeof(Xenogerm), "<GetGizmos>b__15_0");
+            yield return AccessTools.Method(typeof(Xenogerm), "<GetGizmos>b__16_0");
             yield return AccessTools.Method(typeof(Xenogerm), "GetFloatMenuOptions");
             yield return AccessTools.Inner(typeof(Xenogerm), "<GetFloatMenuOptions>d__14")
                 .GetMethod("MoveNext", BindingFlags.NonPublic | BindingFlags.Instance);
