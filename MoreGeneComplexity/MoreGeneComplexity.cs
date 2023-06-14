@@ -1,7 +1,9 @@
 ﻿using System.Reflection;
 using HarmonyLib;
+using RimWorld;
 using UnityEngine;
 using Verse;
+using static MoreGeneComplexity.MoreGeneComplexitySettings;
 
 namespace MoreGeneComplexity;
 
@@ -10,6 +12,8 @@ public class MoreGeneComplexityPatches
 {
     static MoreGeneComplexityPatches()
     {
+        AccessTools.Field(typeof(GeneTuning), "BiostatRange").SetValue(GeneTuning.BiostatRange,new IntRange(GeneTuningMin, 5));
+        
         var harmony = new Harmony("com.arquebus.rimworld.mod.moregenecomplexity");
         harmony.PatchAll(Assembly.GetExecutingAssembly());
     }
